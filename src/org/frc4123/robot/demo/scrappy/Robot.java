@@ -29,6 +29,8 @@ public class Robot extends IterativeRobot {
     Jaguar scBL = new Jaguar(2);
     Jaguar scFR = new Jaguar(3);
     Jaguar scBR = new Jaguar(4);
+    Jaguar clR = new Jaguar(5);
+    Jaguar clL = new Jaguar(6);
     Joystick joyDrive = new Joystick(1);
     SafeRobotDrive drive = new SafeRobotDrive(scFL, scBL, scFR, scBR);
     
@@ -36,8 +38,8 @@ public class Robot extends IterativeRobot {
     double mDriveRotate = 0;
     
     //Safety constants
-    final static double kSpeedmodDefault = .65;
-    final static double kturnmoddefault=.80;
+    final static double kSpeedmodDefault = 1;
+    final static double kturnmoddefault= 1;
 
     
     
@@ -76,8 +78,9 @@ public class Robot extends IterativeRobot {
 
      
 
+        /*Setup for right joystick on XBOX 360 Controller, Omni Wheels are the back*/
+        drive.safeArcadeDrive(-1*(joyDrive.getRawAxis(5)), -1*(joyDrive.getRawAxis(6)), true);
         
-        drive.safeArcadeDrive(joyDrive.getRawAxis(5), joyDrive.getRawAxis(2), true);
     }
     
     public void testInit(){
