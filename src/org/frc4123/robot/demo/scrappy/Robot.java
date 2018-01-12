@@ -33,6 +33,7 @@ public class Robot extends IterativeRobot {
     Jaguar clL = new Jaguar(6);
     Joystick joyDrive = new Joystick(1);
     SafeRobotDrive drive = new SafeRobotDrive(scFL, scBL, scFR, scBR);
+    Climber climber = new Climber(clL, clR); 
     
     double mDriveForward = 0;
     double mDriveRotate = 0;
@@ -79,7 +80,9 @@ public class Robot extends IterativeRobot {
      
 
         /*Setup for right joystick on XBOX 360 Controller, Omni Wheels are the back*/
-        drive.safeArcadeDrive(-1*(joyDrive.getRawAxis(5)), -1*(joyDrive.getRawAxis(6)), true);
+        drive.safeArcadeDrive(joyDrive.getRawAxis(5), -1*(joyDrive.getRawAxis(6)), true);
+        
+        climber.climbWithTrigger(joyDrive.getRawAxis(2));
         
     }
     
