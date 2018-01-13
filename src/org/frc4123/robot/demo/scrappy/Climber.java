@@ -23,9 +23,20 @@ public class Climber {
         
     }
     
-    public void climbWithTrigger(double controller){
-        l_climb.set(controller);
-        r_climb.set(controller);
+    public void climbWithTrigger(double trigger_up, double trigger_dwn){
+        if (trigger_up > 0.2){
+            l_climb.set(trigger_up);
+            r_climb.set(trigger_up);
+        }
+        else if (trigger_dwn > 0 && trigger_up <= 0.1){
+            l_climb.set(trigger_dwn);
+            r_climb.set(trigger_dwn);
+        }
+        else {
+            l_climb.set(0);
+            r_climb.set(0);
+        }
+        
         
     }
     /*
