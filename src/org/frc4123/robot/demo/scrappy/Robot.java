@@ -82,7 +82,7 @@ public class Robot extends IterativeRobot {
         /*Setup for right joystick on XBOX 360 Controller, Omni Wheels are the back*/
         drive.safeArcadeDrive(joyDrive.getRawAxis(5), -1*(joyDrive.getRawAxis(2)), true);
         
-        climber.climbWithTrigger(joyDrive.getRawAxis(4), joyDrive.getRawAxis(3));
+        climber.climbWithTrigger(joyDrive.getRawAxis(4), (joyDrive.getRawAxis(3)));
         
     }
     

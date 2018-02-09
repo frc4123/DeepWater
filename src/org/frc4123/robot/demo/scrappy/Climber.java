@@ -29,8 +29,8 @@ public class Climber {
             r_climb.set(trigger_up);
         }
         else if (trigger_dwn > 0 && trigger_up <= 0.1){
-            l_climb.set(trigger_dwn);
-            r_climb.set(trigger_dwn);
+            l_climb.set(-1*trigger_dwn);
+            r_climb.set(-1*trigger_dwn);
         }
         else {
             l_climb.set(0);
